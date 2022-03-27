@@ -1,0 +1,35 @@
+void algorithm2(vector<unsigned int>& v) {
+  int size = v.size();  //used for the size of the used vector. 
+  vector<unsigned int> used(size, 0);    //used to intialize a second vector that will track random variables already used, the vectors intialize values are all set to zero. 
+  for (size_t i = 0; i < v.size(); i++) { //for loop to insert random values into the vector
+    int check = 0;                //used a value to control the while loop. 
+    do{   //using a do while allows the function generate another random integer untill its valid. 
+    unsigned int ran = randInt(1, v.size());  
+    if(used[ran]==false){   //if the random number generated is not already in the used vector
+      v[i]= ran;             //the random intger is added to the vector 
+      used[ran]=true;        //now sets the integer that was just added to the used vector
+      check = true;          // if the integer was valid and added, then there is not need to generate another number of that index of the vector, and can exit the while loop. 
+    } } while(check == false); 
+  }
+}
+
+void algorithm2(vector<unsigned int>& v) {
+	int size = v.size();
+	vector<unsigned int> used(size, 0);
+
+	for (size_t i = 0; i < v.size(); i++) {
+		int randoma= false;//keep track of do while
+		do
+		{
+			unsigned int random = randInt(1, v.;
+			if (used[random] == false)
+			{
+				v[i] = random;
+				used[random] = true;
+				randoma = true;
+			}
+
+		}
+		while (randoma == false);
+	}
+}
